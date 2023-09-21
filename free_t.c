@@ -1,9 +1,8 @@
 #include "monty.h"
 
 /**
- * free_stack_t - function that free a list of type dlistint_t
- * @head: pointer to a list type stack_t
- *
+ * free_t - function that free a list
+ * @head: pointer
  * Return: void.
  */
 void free_t(stack_h *head)

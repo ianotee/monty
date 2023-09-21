@@ -6,7 +6,7 @@ char stack_queue = 's';
  * main -The main block function.
  * @argument_counter: This is the argument counter.
  * @argument_vector:This is the argument vector
- * Return:0 if (success)
+ * Return:0
  */
 int main(int argument_counter, char *argument_vector[])
 {
