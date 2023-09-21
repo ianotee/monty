@@ -38,7 +38,7 @@ typedef struct instruction_s
 
 extern char stack_queue;
 
-void addition(stack_t **stack, unsigned int line_number);
+void _add(stack_t **stack, unsigned int line_number);
 void _div(stack_t **stack, unsigned int line_number);
 void _mod(stack_t **stack, unsigned int line_number);
 void _mul(stack_t **stack, unsigned int line_number);
