@@ -8,7 +8,7 @@
  *
  * Return: void.
  */
-void get_code(stack_h **stuck, unsigned int Number, char *code_snip)
+void get_code(stack_t **stuck, unsigned int Number, char *code_snip)
 {
     int i = 0;
     options_h code_function[] = {
@@ -17,10 +17,10 @@ void get_code(stack_h **stuck, unsigned int Number, char *code_snip)
         {"mod", modulus},
         {"mul", multiplication},
         {"nop", nopeller},
-        {"pall", pall},
+        {"pall", paller},
         {"pint", pinting},
-        {"pop", pop},
-        {"push", push},
+        {"pop", remove},
+        {"push", insert},
         {"sub", subtract},
         {"swap", swabing},
         {"pchar", print},

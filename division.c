@@ -8,20 +8,20 @@
  */
 void division(stack_h **front, unsigned int Number)
 {
-	stack_h *current = *front;
+	stack_t *current = *head;
 	int nnodes = 1;
 
-	if (*front == NULL)
+	if (*head == NULL)
 	{
 		fprintf(stderr, "L%u: This will not divide\n", Number);
-		free_t(*front);
+		free_t(*head);
 
 		exit(EXIT_FAILURE);
 	}
 
-	while (current->after != NULL)
+	while (current->next != NULL)
 	{
-		current = current->after;
+		current = current->next;
 		nnodes++;
 	}
 
@@ -33,17 +33,17 @@ void division(stack_h **front, unsigned int Number)
 		exit(EXIT_FAILURE);
 	}
 
-	current = *front; 
+	current = *head; 
 
-	if (current->m == 0)
+	if (current->n == 0)
 	{
 		fprintf(stderr, "L%d: can not divide\n", Number);
 		exit(EXIT_FAILURE);
 	}
 
-	current->after->m = current->after->m / current->m; 
+	current->next->n = current->next->n / current->n; 
 
-	*front = current->after;
+	*head = current->next;
 	free(current);
-	current->before = NULL;
+	current->prev = NULL;
 }

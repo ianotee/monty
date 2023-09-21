@@ -6,44 +6,44 @@
  * @Number: It counts
  * Return: 0 if (Success)
  */
-void modulus(stack_h **front, unsigned int Number)
+void modulus(stack_t **front, unsigned int Number)
 {
-	stack_h *current = *front;
+	stack_t *current = *head;
 	int nnodes = 1; 
 
-	if (*front == NULL)
+	if (*head == NULL)
 	{
 		fprintf(stderr, "L%u: can't modulus\n", Number);
-		free_t(*front);
+		free_t(*head);
 
 		exit(EXIT_FAILURE);
 	}
 
-	while (current->after != NULL)
+	while (current->next != NULL)
 	{
-		current = current->after;
+		current = current->next;
 		nnodes++;
 	}
 
 	if (nnodes + 1 <= 2)
 	{
 		fprintf(stderr, "L%d: can't modulus\n", Number);
-		free_t(*front);
+		free_t(*head);
 
 		exit(EXIT_FAILURE);
 	}
 
-	current = *front; 
+	current = *head; 
 
-	if (current->m == 0)
+	if (current->n == 0)
 	{
 		fprintf(stderr, "L%d: The zero\n", Number);
 		exit(EXIT_FAILURE);
 	}
 
-	current->after->m = current->after->m % current->m; 
+	current->next->n = current->next->n % current->n; 
 
-	*front = current->after;
+	*head = current->next;
 	free(current);
-	current->before = NULL;
+	current->prev = NULL;
 }

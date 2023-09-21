@@ -3,6 +3,8 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <fcntl.h>
+#include <sys/types.h>
 #include <string.h>
 #include <ctype.h>
 #include <unistd.h>
@@ -32,31 +34,31 @@ typedef struct stack_s
  */
 typedef struct options_q
 {
-	char *t_code;
-	void (*f)(stack_h **stuck, unsigned int Number);
+	char *opcode;
+	void (*f)(stack_t **stuck, unsigned int Number);
 } options_h;
 
 extern char queues;
 
-void addition(stack_h **stuck, unsigned int Number);
-void division(stack_h **stuck, unsigned int Number);
-void modulus(stack_h **stuck, unsigned int Number);
-void multiplication(stack_h **stuck, unsigned int Number);
-void nopeller(stack_h **stuck, unsigned int Number);
-void pall(stack_t **stack, unsigned int Number);
-void pinting(stack_h **stuck, unsigned int Number);
-void pop(stack_t **stack, unsigned int Number);
-void push(stack_t **stack, unsigned int Number);
-void subtract(stack_h **stuck, unsigned int Number);
-void swabing(stack_h **stuck, unsigned int Number);
+void addition(stack_t **stuck, unsigned int Number);
+void division(stack_t **stuck, unsigned int Number);
+void modulus(stack_t **stuck, unsigned int Number);
+void multiplication(stack_t **stuck, unsigned int Number);
+void nopeller(stack_t **stuck, unsigned int Number);
+void paller(stack_t **stuct, unsigned int Number);
+void pinting(stack_t **stuck, unsigned int Number);
+void remove(stack_t **stuck, unsigned int Number);
+void insert(stack_t **stuck, unsigned int Number);
+void subtract(stack_t **stuck, unsigned int Number);
+void swabing(stack_t **stuck, unsigned int Number);
 
-void print(stack_h **stuck, unsigned int Number);
-void print_string(stack_h **stuck, unsigned int Number);
-void rotar(stack_h **stuck, unsigned int Number);
-void rotar_length(stack_h **stuck, unsigned int Number);
+void print(stack_t **stuck, unsigned int Number);
+void print_string(stack_t **stuck, unsigned int Number);
+void rotar(stack_t **stuck, unsigned int Number);
+void rotar_length(stack_t **stuck, unsigned int Number);
 
-void mount(stack_h **stuck, unsigned int Number);
-void line(stack_h **stuck, unsigned int Number);
+void mount(stack_t **stuck, unsigned int Number);
+void line(stack_t **stuck, unsigned int Number);
 
 /**
  * get_opcode - reads opcode and verifies if is valid.
@@ -66,10 +68,10 @@ void line(stack_h **stuck, unsigned int Number);
  *
  * Return: void.
  */
-void get_code(stack_t **stack, unsigned int Number, char *code);
+void get_code(stack_t **stuck, unsigned int Number, char *code);
 char **code(char *line);
 void free_t(stack_t *head);
-void add_node_at_end(stack_h **stuck, int argument);
-void add_at_line(stack_h **stuck, int argument);
+void add_node_at_end(stack_t **stuck, int argument);
+void add_at_line(stack_t **stuck, int argument);
 
 #endif

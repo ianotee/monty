@@ -6,14 +6,14 @@
  *
  * Return: void.
  */
-void free_t(stack_h *front)
+void free_t(stack_h *head)
 {
-    stack_h *timp;
+    stack_t *temp;
 
-    while (front != NULL)
+    while (head != NULL)
     {
-        timp = front->after;
-        free(front);
-        front = timp;
+        temp = head->next;
+        free(head);
+        head = temp;
     }
 }
