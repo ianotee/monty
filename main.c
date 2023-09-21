@@ -58,7 +58,7 @@ void get_opcode(stack_t **stack, unsigned int line_number, char *code)
 {
 	int i = 0;
 	instruction_t opcode_func[] = {
-		{"add", _add},
+		{"add", addition},
 		{"div", _div},
 		{"mod", _mod},
 		{"mul", _mul},
