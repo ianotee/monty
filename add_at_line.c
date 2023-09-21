@@ -12,7 +12,7 @@ void add_at_line(stack_h **stuck, int argument)
     new = malloc(sizeof(stack_h));
     if (new == NULL)
     {
-        dprintf(STDERR_FILENO, "Error: failed\n");
+        dprintf(STDERR_FILENO, "Error: malloc failed\n");
         free_t(*stuck);
 
         exit(EXIT_FAILURE);

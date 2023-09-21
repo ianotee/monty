@@ -16,7 +16,7 @@ void insert(stack_h **stuck, unsigned int Number)
 
 	if (argument == NULL)
 	{
-		dprintf(STDERR_FILENO, "L%u: usage without error.\n", Number);
+		dprintf(STDERR_FILENO, "L%u: usage: push integer\n", Number);
 		free_t(*stuck);
 
 		exit(EXIT_FAILURE);
