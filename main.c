@@ -61,7 +61,7 @@ void get_opcode(stack_t **stack, unsigned int line_number, char *code)
 		{"add", _add},
 		{"div", _div},
 		{"mod", _mod},
-		{"mul", _mul},
+		{"mul", multiplication},
 		{"nop", _nop},
 		{"pall", _pall},
 		{"pint", _pint},

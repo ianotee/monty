@@ -1,47 +1,45 @@
 #include "monty.h"
 
 /**
- * multiplication -  This function multiply values.
- * @front: Pointer
- * @Number: Counter.
- * Return: 0 if (success)
+ * _mul -  multiply top element of the stack with the second top element
+ * @head: top of the stack
+ * @line_number: line number where a wrong command was found
+ * Return: void
  */
-void multiplication(stack_h **front, unsigned int Number)
+void _mul(stack_t **head, unsigned int line_number)
 {
-	stack_h *current = *front;
+	stack_t *current = *head;
+	int nnodes = 1; /*number of elements in stack*/
 
-	int nnodes = 1; 
-
-	if (*front == NULL)
+	if (*head == NULL)
 	{
-		fprintf(stderr, "L%u: can't  multiplaction\n",Number);
-		free_t(*front);
+		fprintf(stderr, "L%u: can't mul, stack too short\n", line_number);
+		free_stack_t(*head);
 
 		exit(EXIT_FAILURE);
 	}
 
 
-	while (current->after != NULL)
+	while (current->next != NULL)
 	{
-		current = current->after;
+		current = current->next;
 		nnodes++;
 	}
 
 	if (nnodes + 1 <= 2)
 	{
-		fprintf(stderr, "L%u: can't multiplication\n", Number);
-		free_t(*front);
+		fprintf(stderr, "L%u: can't mul, stack too short\n", line_number);
+		free_stack_t(*head);
 
 		exit(EXIT_FAILURE);
 	}
 
-	current = *front; 
+	current = *head; /*current equals to head to make mul*/
 
-	current->after->m = current->after->m* current->m;
+	current->next->n = current->next->n * current->n; /*do the mul*/
 
-	*front = current->after;
+	*head = current->next;
 	free(current);
-	current->before = NULL;
+	current->prev = NULL;
 
 }
-
