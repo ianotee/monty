@@ -6,7 +6,7 @@
  * @Number: Number counter
  * Return: 0 if (success)
  */
-void insert(stack_h **stuck, unsigned int Number)
+void push(stack_h **stuck, unsigned int Number)
 {
 	size_t size = 0, i = 0;
 	char arg[128] = "";

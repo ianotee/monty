@@ -43,10 +43,10 @@ void division(stack_h **stuck, unsigned int Number);
 void modulus(stack_h **stuck, unsigned int Number);
 void multiplication(stack_h **stuck, unsigned int Number);
 void nopeller(stack_h **stuck, unsigned int Number);
-void paller(stack_h **stuck, unsigned int Number);
+void pall(stack_h **stuck, unsigned int Number);
 void pinting(stack_h **stuck, unsigned int Number);
 void remove(stack_h **stuck, unsigned int Number);
-void insert(stack_h **stuck, unsigned int Number);
+void push(stack_h **stuck, unsigned int Number);
 void subtract(stack_h **stuck, unsigned int Number);
 void swabing(stack_h **stuck, unsigned int Number);
 

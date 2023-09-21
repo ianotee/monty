@@ -7,7 +7,7 @@
  *
  * Return: void.
  */
-void paller(stack_h **stuck, unsigned int  Number)
+void pall(stack_h **stuck, unsigned int  Number)
 {
 	stack_h *current;
 
