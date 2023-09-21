@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 
 /**
  *  modulus - It gets the second value.

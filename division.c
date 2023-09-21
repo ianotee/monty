@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 
 /**
  * division -  This function divides two values

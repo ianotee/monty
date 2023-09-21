@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 
 /**
  * line- This function chooses a stalk

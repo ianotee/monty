@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 
 /**
  * insert- This one inserts the elements into a stalk

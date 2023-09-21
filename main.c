@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 
 char stack_queue = 's';
 
