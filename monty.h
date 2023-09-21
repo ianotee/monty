@@ -33,12 +33,12 @@ typedef struct stack_s
 typedef struct instruction_s
 {
 	char *opcode;
-	void (*f)(stack_t **stuck, unsigned int number);
+	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
 extern char stack_queue;
 
-void addition(stack_t **stuck, unsigned int number);
+void _add(stack_t **stack, unsigned int line_number);
 void _div(stack_t **stack, unsigned int line_number);
 void _mod(stack_t **stack, unsigned int line_number);
 void _mul(stack_t **stack, unsigned int line_number);
@@ -66,7 +66,7 @@ void _queue(stack_t **stack, unsigned int line_number);
  *
  * Return: void.
  */
-void get_opcode(stack_t **stuck, unsigned int number, char *code);
+void get_opcode(stack_t **stack, unsigned int line_number, char *code);
 char **token_opcode(char *line);
 void free_stack_t(stack_t *head);
 void add_node(stack_t **stack, int argument);
