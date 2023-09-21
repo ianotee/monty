@@ -13,7 +13,7 @@ void addition(stack_h **stuck, unsigned int Number)
 	if (!stuck || !*stuck || !((*stuck)->after))
 	{
 		fprintf(stderr, "L%d: will not add\n", Number);
-		free_stack_t(*stuck);
+		free_t(*stuck);
 
 		exit(EXIT_FAILURE);
 	}
