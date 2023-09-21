@@ -13,10 +13,10 @@ int main(int argc, char *argv[])
 {
 	FILE *stream = NULL;
 	size_t len = 0;
-	unsigned int line_number = 1;
+	unsigned int number = 1;
 	char *line = NULL;
 	char *code = NULL;
-	stack_t *stack = NULL;
+	stack_t *stuck = NULL;
 
 	if (argc != 2)
 	{
@@ -35,8 +35,8 @@ int main(int argc, char *argv[])
 	{
 		code = strtok(line, " \t\r\n\v\f");
 		if (code != NULL && code[0] != '#')
-			get_opcode(&stack, line_number, code);
-		line_number++;
+			get_opcode(&stack, number, code);
+		number++;
 	}
 
 	free_stack_t(stack);
@@ -54,7 +54,7 @@ int main(int argc, char *argv[])
  *
  * Return: void.
  */
-void get_opcode(stack_t **stack, unsigned int line_number, char *code)
+void get_opcode(stack_t **stuck, unsigned int number, char *code)
 {
 	int i = 0;
 	instruction_t opcode_func[] = {
@@ -82,13 +82,13 @@ void get_opcode(stack_t **stack, unsigned int line_number, char *code)
 	{
 		if (strcmp(opcode_func[i].opcode, code) == 0)
 		{
-			opcode_func[i].f(stack, line_number);
+			opcode_func[i].f(stack, number);
 			return;
 		}
 		i++;
 	}
-	dprintf(STDERR_FILENO, "L%u: unknown instruction %s\n", line_number, code);
-	free_stack_t(*stack);
+	dprintf(STDERR_FILENO, "L%u: unknown instruction %s\n", number, code);
+	free_stack_t(*stuck);
 	/**
 	 * close_file
 	 */
