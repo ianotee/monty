@@ -7,7 +7,7 @@
  *
  * Return: void.
  */
-void _add(stack_t **stack, unsigned int line_number)
+void addition(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp;
 
