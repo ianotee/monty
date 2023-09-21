@@ -1,13 +1,12 @@
-#ifndef _MONTY_H_
-#define _MONTY_H_
-
+#ifndef MONTY_H
+#define MONTY_H
 #include <stdio.h>
 #include <stdlib.h>
-#include <fcntl.h>
 #include <sys/types.h>
+#include <unistd.h>
+#include <fcntl.h>
 #include <string.h>
 #include <ctype.h>
-#include <unistd.h>
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -23,7 +22,14 @@ typedef struct stack_s
 	struct stack_s *prev;
 	struct stack_s *next;
 } stack_t;
-
+/**
+ * struct bus_s - variables -args, file, line content
+ * @arg: value
+ * @file: pointer to monty file
+ * @content: line content
+ * @lifi: flag change stack <-> queue
+ * Description: carries values through the program
+ */
 typedef struct bus_s
 {
 	char *arg;
@@ -31,7 +37,7 @@ typedef struct bus_s
 	char *content;
 	int lifi;
 }  bus_t;
-
+extern bus_t bus;
 /**
  * struct instruction_s - opcode and its function
  * @opcode: the opcode
@@ -40,47 +46,33 @@ typedef struct bus_s
  * Description: opcode and its function
  * for stack, queues, LIFO, FIFO Holberton project
  */
-typedef struct instructions_s
+typedef struct instruction_s
 {
 	char *opcode;
 	void (*f)(stack_t **stack, unsigned int line_number);
-} instructions_t;
-
-extern char queues;
+} instruction_t;
+char *_realloc(char *ptr, unsigned int old_size, unsigned int new_size);
+ssize_t getstdin(char **lineptr, int file);
+char  *clean_line(char *content);
+void f_push(stack_t **head, unsigned int number);
+void f_pall(stack_t **head, unsigned int number);
+void f_pint(stack_t **head, unsigned int number);
+int execute(char *content, stack_t **head, unsigned int counter, FILE *file);
+void free_stack(stack_t *head);
+void f_pop(stack_t **head, unsigned int counter);
+void f_swap(stack_t **head, unsigned int counter);
 void f_add(stack_t **head, unsigned int counter);
-
-void _add(stack_t **stack, unsigned int line_number);
-void division(stack_t **stuck, unsigned int Number);
-void modulus(stack_t **stuck, unsigned int Number);
-void multiplication(stack_t **stuck, unsigned int Number);
-void nopeller(stack_t **stuck, unsigned int Number);
-void paller(stack_t **stuct, unsigned int Number);
-void pinting(stack_t **stuck, unsigned int Number);
-void remove(stack_t **stuck, unsigned int Number);
-void insert(stack_t **stuck, unsigned int Number);
-void subtract(stack_t **stuck, unsigned int Number);
-void swabing(stack_t **stuck, unsigned int Number);
-
-void print(stack_t **stuck, unsigned int Number);
-void print_string(stack_t **stuck, unsigned int Number);
-void rotar(stack_t **stuck, unsigned int Number);
-void rotar_length(stack_t **stuck, unsigned int Number);
-
-void mount(stack_t **stuck, unsigned int Number);
-void line(stack_t **stuck, unsigned int Number);
-
-/**
- * get_opcode - reads opcode and verifies if is valid.
- * @stack: double pointer to header (top) of the stack.
- * @line_number: counter for line number of the file.
- * @code: code to operate.
- *
- * Return: void.
- */
-void get_code(stack_t **stuck, unsigned int Number, char *code);
-char **code(char *line);
-void free_t(stack_t *head);
-void add_node_at_end(stack_t **stuck, int argument);
-void add_at_line(stack_t **stuck, int argument);
-
+void f_nop(stack_t **head, unsigned int counter);
+void f_sub(stack_t **head, unsigned int counter);
+void f_div(stack_t **head, unsigned int counter);
+void f_mul(stack_t **head, unsigned int counter);
+void f_mod(stack_t **head, unsigned int counter);
+void f_pchar(stack_t **head, unsigned int counter);
+void f_pstr(stack_t **head, unsigned int counter);
+void f_rotl(stack_t **head, unsigned int counter);
+void f_rotr(stack_t **head, __attribute__((unused)) unsigned int counter);
+void addnode(stack_t **head, int n);
+void addqueue(stack_t **head, int n);
+void f_queue(stack_t **head, unsigned int counter);
+void f_stack(stack_t **head, unsigned int counter);
 #endif
