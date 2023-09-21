@@ -64,7 +64,7 @@ void get_code(stack_h **stuck, unsigned int Number, char *code_snip)
         {"nop", nopeller},
         {"pall", pall},
         {"pint", pinting},
-        {"pop", remove},
+        {"pop", pop},
         {"push", push},
         {"sub", subtract},
         {"swap", swabing},

@@ -6,7 +6,7 @@
  * @Number: The counter.
  * Return: 0 if (success)
  */
-void remove(stack_h **stuck, unsigned int Number)
+void pop(stack_h **stuck, unsigned int Number)
 {
 	stack_h *current;
 
