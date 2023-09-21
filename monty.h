@@ -15,12 +15,12 @@
  * Description: doubly linked list node structure
  * for stack, queues, LIFO, FIFO Holberton project
  */
-typedef struct stock_f
+typedef struct stack_s
 {
-	int m;
-	struct stock_f *before;
-	struct stock_f *after;
-} stack_h;
+	int n;
+	struct stack_s *prev;
+	struct stack_s *next;
+} stack_t;
 
 /**
  * struct instruction_s - opcode and its function
@@ -43,10 +43,10 @@ void division(stack_h **stuck, unsigned int Number);
 void modulus(stack_h **stuck, unsigned int Number);
 void multiplication(stack_h **stuck, unsigned int Number);
 void nopeller(stack_h **stuck, unsigned int Number);
-void pall(stack_h **stuck, unsigned int Number);
+void pall(stack_t **stack, unsigned int Number);
 void pinting(stack_h **stuck, unsigned int Number);
-void pop(stack_h **stuck, unsigned int Number);
-void push(stack_h **stuck, unsigned int Number);
+void pop(stack_t **stack, unsigned int Number);
+void push(stack_t **stack, unsigned int Number);
 void subtract(stack_h **stuck, unsigned int Number);
 void swabing(stack_h **stuck, unsigned int Number);
 
@@ -66,9 +66,9 @@ void line(stack_h **stuck, unsigned int Number);
  *
  * Return: void.
  */
-void get_code(stack_h **stuck, unsigned int Number, char *code);
+void get_code(stack_t **stack, unsigned int Number, char *code);
 char **code(char *line);
-void free_t(stack_h *head);
+void free_t(stack_t *head);
 void add_node_at_end(stack_h **stuck, int argument);
 void add_at_line(stack_h **stuck, int argument);
 

@@ -7,16 +7,16 @@
  *
  * Return: void.
  */
-void pall(stack_h **stuck, unsigned int  Number)
+void pall(stack_t **stack, unsigned int  Number)
 {
-	stack_h *current;
+	stack_t *current;
 
 	(void) Number;
-	current = *stuck;
+	current = *stack;
 	while (current != NULL)
 	{
-		printf("%d\n", current->m);
-		current = current->after;
+		printf("%d\n", current->n);
+		current = current->next;
 	}
 }
 

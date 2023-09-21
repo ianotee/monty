@@ -15,7 +15,7 @@ int main(int argument_counter, char *argument_vector[])
 	unsigned int Number = 1;
 	char *line_u = NULL;
 	char *code_snip = NULL;
-	stack_h *stuck = NULL;
+	stack_t *stack = NULL;
 
 	if (argument_counter != 2)
 	{
@@ -53,7 +53,7 @@ int main(int argument_counter, char *argument_vector[])
  *
  * Return: void.
  */
-void get_code(stack_h **stuck, unsigned int Number, char *code_snip)
+void get_code(stack_t **stack, unsigned int Number, char *code_snip)
 {
     int i = 0;
     options_h code_function[] = {
@@ -86,7 +86,7 @@ void get_code(stack_h **stuck, unsigned int Number, char *code_snip)
         i++;
     }
     dprintf(STDERR_FILENO, "L%u: This is not known.%s\n", Number, code_snip);
-    free_t(*stuck);
+    free_t(*stack);
 
     exit(EXIT_FAILURE);
 }
@@ -97,9 +97,9 @@ void get_code(stack_h **stuck, unsigned int Number, char *code_snip)
  *
  * Return: void.
  */
-void free_t(stack_h *front)
+void free_t(stack_t *front)
 {
-    stack_h *timp;
+    stack_t *timp;
 
     while (front != NULL)
     {

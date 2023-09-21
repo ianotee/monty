@@ -6,7 +6,7 @@
  * @Number: Number counter
  * Return: 0 if (success)
  */
-void push(stack_h **stuck, unsigned int Number)
+void push(stack_t **stack, unsigned int Number)
 {
 	size_t size = 0, i = 0;
 	char arg[128] = "";
@@ -17,7 +17,7 @@ void push(stack_h **stuck, unsigned int Number)
 	if (argument == NULL)
 	{
 		dprintf(STDERR_FILENO, "L%u: usage: push integer\n", Number);
-		free_t(*stuck);
+		free_t(*stack);
 
 		exit(EXIT_FAILURE);
 	}
@@ -27,14 +27,14 @@ void push(stack_h **stuck, unsigned int Number)
 		if (!isdigit(argument[i]) && argument[0] != '-')
 		{
 			dprintf(STDERR_FILENO, "L%u: usage: push integer\n", Number);
-			free_t(*stuck);
+			free_t(*stack);
 
 			exit(EXIT_FAILURE);
 		}
 
 	if (queues == 's')
-		add_node_at_end(stuck, atoi(argument));
+		add_node_at_end(stack, atoi(argument));
 
 	if (queues == 'q')
-		add_at_line(stuck, atoi(argument));
+		add_at_line(stack, atoi(argument));
 }
