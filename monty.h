@@ -9,12 +9,10 @@
 #include <ctype.h>
 #include <unistd.h>
 /**
- * struct stack_s - doubly linked list representation of a stack (or queue)
+ * struct stack_s - doubly linked list
  * @n: integer
- * @before: points to the previous element of the stack (or queue)
- * @after: points to the next element of the stack (or queue
- * Description: doubly linked list node structure
- * for stuck, queues, LIFO, FIFO Holberton project
+ * @before: points to the previous element
+ * @after: points to the next element
  */
 typedef struct stack_s
 {
@@ -24,10 +22,10 @@ typedef struct stack_s
 } stack_t;
 
 /**
- * struct instruction_s - opcode and its function
- * @opcode: the opcode
- * @f: function to handle the opcode
- * for stack, queues, LIFO, FIFO Holberton project
+ * struct options_q - opcode
+ * @opcode: opcode
+ * @f: function to handle
+ * for stack, queues, LIFO, FIFO
  */
 typedef struct options_q
 {
@@ -58,9 +56,9 @@ void mount(stack_t **stuck, unsigned int Number);
 void line(stack_t **stuck, unsigned int Number);
 
 /**
- * get_code - reads opcode and verifies if is valid.
- * @stuck: double pointer to header (top) of the stack.
- * @Number: counter for line number of the file.
+ * get_code - reads opcode
+ * @stuck: double pointer
+ * @Number: counter for line number
  * @code: code
  * Return: NULL.
  */
