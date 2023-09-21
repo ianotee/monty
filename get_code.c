@@ -12,7 +12,7 @@ void get_code(stack_t **stuck, unsigned int Number, char *code_snip)
 {
     int i = 0;
     options_h code_function[] = {
-        {"add", addition},
+        {"add", _add},
         {"div", division},
         {"mod", modulus},
         {"mul", multiplication},

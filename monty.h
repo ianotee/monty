@@ -32,15 +32,15 @@ typedef struct stack_s
  * Description: opcode and its function
  * for stack, queues, LIFO, FIFO Holberton project
  */
-typedef struct options_q
+typedef struct instructions_s
 {
 	char *opcode;
-	void (*f)(stack_t **stuck, unsigned int Number);
-} options_h;
+	void (*f)(stack_t **stack, unsigned int line_number);
+} instructions_t;
 
 extern char queues;
 
-void addition(stack_t **stuck, unsigned int Number);
+void _add(stack_t **stack, unsigned int line_number);
 void division(stack_t **stuck, unsigned int Number);
 void modulus(stack_t **stuck, unsigned int Number);
 void multiplication(stack_t **stuck, unsigned int Number);
