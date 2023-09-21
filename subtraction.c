@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 
 /**
  * subtraction -  Removes objects from stack.

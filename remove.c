@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 
 /**
  * remove - It removes an object from a stack.

@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 
 /**
  * paller- It inserts an element into a stack

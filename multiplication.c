@@ -1,5 +1,5 @@
 
-#include "main.h"
+#include "monty.h"
 
 /**
  * multiplication -  This function multiply values.
