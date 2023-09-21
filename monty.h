@@ -24,6 +24,14 @@ typedef struct stack_s
 	struct stack_s *next;
 } stack_t;
 
+typedef struct bus_s
+{
+	char *arg;
+	FILE *file;
+	char *content;
+	int lifi;
+}  bus_t;
+
 /**
  * struct instruction_s - opcode and its function
  * @opcode: the opcode
@@ -39,6 +47,7 @@ typedef struct instructions_s
 } instructions_t;
 
 extern char queues;
+void f_add(stack_t **head, unsigned int counter);
 
 void _add(stack_t **stack, unsigned int line_number);
 void division(stack_t **stuck, unsigned int Number);
